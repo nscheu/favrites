@@ -27,12 +27,12 @@ connection.once('open', () => {
 });
 
 // Require the api endpoints
-const exercisesRouter = require('./routes/exercises');
-const usersRouter = require('./routes/users');
+//const exercisesRouter = require('./routes/exercises');
+const usersRouter = require('./backend/routes/users');
 
 // Loads exercises Router when users go to oururl.com/exercises
-app.use('/exercises', exercisesRouter);
-app.use('/users', usersRouter);
+//app.use('/exercises', exercisesRouter);
+app.use('/', usersRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
